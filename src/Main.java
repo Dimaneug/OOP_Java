@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,12 +23,12 @@ public class Main {
 //
 //        cat.hunt();
         Pharmacy pharmacy1 = new Pharmacy();
-        pharmacy1.addComponent(new Component("Penicillin", "2", 13))
-                .addComponent(new Component("Water", "0.5", 2));
+        pharmacy1.addComponent(new Component("Penicillin", "2", 17))
+                .addComponent(new Component("Water", "0.5", 6));
 
         Pharmacy pharmacy2 = new Pharmacy();
         pharmacy2.addComponent(new Component("Penicillin", "2", 17))
-                .addComponent(new Component("Water", "0.5", 6));
+                .addComponent(new Component("Wator", "0.5", 6));
 
         Pharmacy pharmacy3 = new Pharmacy();
         pharmacy3.addComponent(new Component("Penicillin", "2", 7))
@@ -40,17 +38,15 @@ public class Main {
         pharmacy4.addComponent(new Component("Penicillin", "2", 7))
                 .addComponent(new Component("Water", "0.5", 1));
 
-        List<Pharmacy> pharmacies = new ArrayList<>();
+        Set<Pharmacy> pharmacies = new HashSet<>();
         pharmacies.add(pharmacy1);
         pharmacies.add(pharmacy2);
         pharmacies.add(pharmacy3);
-        System.out.println(pharmacies);
-        System.out.println("--------");
+        pharmacies.add(pharmacy4);
 
-        Collections.sort(pharmacies);
-        System.out.println(pharmacies);
+        System.out.println(pharmacies.size());
 
-        System.out.println(pharmacy3.equals(pharmacy4));
+        System.out.println(pharmacy1.compareTo(pharmacy2));
 
 //        while(pharmacy.hasNext()) {
 //            System.out.println(pharmacy.next());
