@@ -9,6 +9,10 @@ public class Component {
         this.power = power;
     }
 
+    public int getPower() {
+        return power;
+    }
+
     @Override
     public String toString() {
         return String.format("%s{name: %s, weight: %s, power: %d}", getClass().getSimpleName(), name, weight, power);
