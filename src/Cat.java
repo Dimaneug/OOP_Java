@@ -1,13 +1,17 @@
-public class Cat extends Animal implements Soundable, Illable{
+public class Cat extends Animal implements Soundable, Illable, Runnable, Swimable {
     private int countPaws;
+    private int runSpeed;
+    private int swimSpeed;
 
     public Cat() {
-        this("Max", null, null, false, 4);
+        this("Barsik", null, null, false, 4, 10, 2);
     }
 
-    public Cat(String nameAnimal, String ownerName, String diagnosis, Boolean isVaccinated, int countPaws) {
+    public Cat(String nameAnimal, String ownerName, String diagnosis, Boolean isVaccinated, int countPaws, int runSpeed, int swimSpeed) {
         super(nameAnimal, ownerName, diagnosis, isVaccinated);
         this.countPaws = countPaws;
+        this.runSpeed = runSpeed;
+        this.swimSpeed = swimSpeed;
     }
 
     private void wakeUp() {
@@ -34,11 +38,6 @@ public class Cat extends Animal implements Soundable, Illable{
     }
 
     @Override
-    protected void fly() {
-        System.out.println("Кошка не умеет летать");
-    }
-
-    @Override
     public void ill() {
 
     }
@@ -46,5 +45,25 @@ public class Cat extends Animal implements Soundable, Illable{
     @Override
     public void sound() {
 
+    }
+
+    @Override
+    public void run() {
+
+    }
+
+    @Override
+    public int getRunSpeed() {
+        return runSpeed;
+    }
+
+    @Override
+    public void swim() {
+
+    }
+
+    @Override
+    public int getSwimSpeed() {
+        return swimSpeed;
     }
 }

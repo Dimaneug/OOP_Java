@@ -47,5 +47,17 @@ public class VetClinic {
         return soundableAnimals;
     }
 
+    public List<Animal> getRunnable() {
+        List<Animal> runnableAnimals = new ArrayList<>();
+        for (Animal animal : animals
+        ) {
+            if (animal instanceof Runnable)
+                runnableAnimals.add(animal);
+        }
+        return runnableAnimals;
+    }
+
+
+
 
 }

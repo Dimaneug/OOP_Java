@@ -3,32 +3,31 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        Animal barsik = new Animal("Барсик", "Эдик", "Простуда", false);
-//        System.out.println(barsik.isVaccinated());
-//        barsik.setVaccinated(true);
-//        System.out.println(barsik.isVaccinated());
-//        System.out.println(barsik.getTYPE());
-//        Cat cat = new Cat();
-//        System.out.println(cat);
 //
-//        Animal muska = new Cat();
-//        Animal pes = new Dog();
-//        List<Animal> animals = new ArrayList<Animal>();
-//        animals.add(cat);
-//        animals.add(barsik);
-//        animals.add(muska);
-//        animals.add(pes);
-//        System.out.println(animals);
-//        System.out.println(muska.getTYPE());
-//        System.out.println(muska.getTYPE("With arg "));
 //
 //        cat.hunt();
         VetClinic clinic = new VetClinic();
-        clinic.addNewAnimal(new Cat("Barsik", "Nikolai", null, true, 4)).addNewAnimal(new Dog());
+        clinic.addNewAnimal(new Cat())
+                .addNewAnimal(new Dog())
+                .addNewAnimal(new Duck())
+                .addNewAnimal(new Parrot())
+                .addNewAnimal(new Whale());
 
-        for (Animal animal: clinic.getAnimals()) {
-            animal.ill();
-        }
+        System.out.println(clinic.getRunnable());
+
+        System.out.println(clinic.getFlyable());
+
+        HeadNurse sveta = new HeadNurse("Sveta", "Svetova", false);
+        JuniorNurse natasha = new JuniorNurse("Natasha", "Natalieva", false);
+        SeniorDoctor oleg = new SeniorDoctor("Oleg", "Olegov", false);
+        Intern ivan = new Intern("Ivan", "Ivanov", false);
+
+        sveta.vaccinate(new Dog());
+        oleg.teach(ivan);
+        natasha.setBusy(true);
+        sveta.teach(natasha); // Наташа занята, поэтому нельзя обучить
+        oleg.performOperation(new Cat()); // Без диагноза операции не будет
+        oleg.performOperation(new Cat("Muska", null, "Prostuda", false, 4, 7, 3));
 
 
     }

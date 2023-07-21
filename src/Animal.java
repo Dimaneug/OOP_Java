@@ -1,6 +1,18 @@
 public class Animal {
     protected String nameAnimal;
     protected String ownerName;
+    protected String diagnosis;
+    protected Boolean isVaccinated;
+
+    public Animal(String nameAnimal, String ownerName, String diagnosis, Boolean isVaccinated) {
+        this.nameAnimal = nameAnimal;
+        this.ownerName = ownerName;
+        this.diagnosis = diagnosis;
+        this.isVaccinated = isVaccinated;
+    }
+
+    public Animal() {
+    }
 
     public void setNameAnimal(String nameAnimal) {
         this.nameAnimal = nameAnimal;
@@ -26,20 +38,9 @@ public class Animal {
         return diagnosis;
     }
 
-    protected String diagnosis;
-    protected Boolean isVaccinated;
 
     protected final String TYPE = getClass().getSimpleName();
 
-    public Animal(String nameAnimal, String ownerName, String diagnosis, Boolean isVaccinated) {
-        this.nameAnimal = nameAnimal;
-        this.ownerName = ownerName;
-        this.diagnosis = diagnosis;
-        this.isVaccinated = isVaccinated;
-    }
-
-    public Animal() {
-    }
 
     public boolean isVaccinated() {
         return this.isVaccinated;
@@ -62,15 +63,4 @@ public class Animal {
         return arg + TYPE;
     }
 
-    protected void toGo() {
-        System.out.println("Животное двигается");
-    }
-
-    protected void fly() {
-        System.out.println("Животное летает");
-    }
-
-    protected void swim() {
-        System.out.println("Животное плывёт");
-    }
 }
