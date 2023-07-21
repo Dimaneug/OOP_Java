@@ -1,4 +1,4 @@
-public class Cat extends Animal {
+public class Cat extends Animal implements Soundable, Illable{
     private int countPaws;
 
     public Cat() {
@@ -36,5 +36,15 @@ public class Cat extends Animal {
     @Override
     protected void fly() {
         System.out.println("Кошка не умеет летать");
+    }
+
+    @Override
+    public void ill() {
+
+    }
+
+    @Override
+    public void sound() {
+
     }
 }

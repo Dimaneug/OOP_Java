@@ -1,6 +1,31 @@
 public class Animal {
     protected String nameAnimal;
     protected String ownerName;
+
+    public void setNameAnimal(String nameAnimal) {
+        this.nameAnimal = nameAnimal;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getNameAnimal() {
+        return nameAnimal;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
     protected String diagnosis;
     protected Boolean isVaccinated;
 
