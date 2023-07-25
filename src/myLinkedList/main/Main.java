@@ -1,4 +1,4 @@
-package myLinkedList;
+package myLinkedList.main;
 
 import myLinkedList.main.classes.GBLinkedList;
 
