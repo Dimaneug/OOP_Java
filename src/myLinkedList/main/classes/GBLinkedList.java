@@ -86,9 +86,16 @@ public class GBLinkedList<T> implements GBList<T>, GBDeque<T> {
     @Override
     public void remove(int index) {
         Node<T> removable = node(index);
-        removable.prev.next = removable.next;
-        removable.next.prev = removable.prev;
-        removable.elem = null;
+        if (removable == null) return;
+        if (removable.prev != null)
+            removable.prev.next = removable.next;
+        if (removable.next != null)
+            removable.next.prev = removable.prev;
+        if (index == 0) {
+            this.first = removable.next;
+        } else if (index == this.size-1) {
+            this.last = removable.prev;
+        }
         this.size--;
     }
 
